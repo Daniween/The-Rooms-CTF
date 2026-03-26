@@ -1,0 +1,11 @@
+--- NIVEAU 2 : ANALYSE RESEAU (PCAP) ---
+
+Excellent travail. Vous êtes maintenant dans la Room 02.
+
+Le fichier 'network_capture.pcap' contient une capture
+de trafic réseau interceptée cette nuit. Il semblerait
+qu'un des administrateurs se soit connecté à un service FTP interne
+sans utiliser de chiffrement...
+
+Vous pouvez utiliser tcpdump ou lire le fichier pour y trouver
+les informations de connexion en clair.

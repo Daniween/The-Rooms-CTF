@@ -1,0 +1,32 @@
+================================================================================
+                              MISSION BRIEFING
+================================================================================
+
+Agent,
+
+Vous avez été sélectionné pour infiltrer les serveurs de la multinationale 
+"EvilCorp". Voici votre point d'entrée vers leurs infrastructures internes.
+
+Votre objectif global : Explorer leurs différents serveurs, 
+récolter les flags et trouver les informations de connexion pour avancer
+jusqu'à leur système central.
+
+Dans chaque Room, vous trouverez une archive 'secret.zip'. Elle contient
+les informations pour atteindre le serveur suivant (adresse IP, user, password)
+ainsi que votre flag du niveau en cours.
+Attention pensez à bien tout récupérer avant de partir.
+Pour ouvrir cette archive, vous devrez trouver le mot de passe caché 
+quelque part dans le serveur courant en utilisant vos compétences en
+CyberSécurité.
+
+--- NIVEAU 1 : ACCÈS INITIAL ---
+Nous avons réussi à récupérer les premiers identifiants de la 'Room-01'.
+Connectez-vous y dès maintenant.
+
+   Serveur : 172.30.0.11
+   Utilisateur : alice
+   Mot de passe : WelcomeToEvilCorp
+
+Bonne chance.
+
+================================================================================

@@ -1,0 +1,18 @@
+--- NIVEAU 3 : SERVICE CACHÉ ---
+
+On avance !
+Sur ce serveur, un service interne critique de "EvilCorp" est en cours 
+d'exécution, mais il n'est pas accessible de l'extérieur.
+
+Il semblerait qu'une API interne écoute sur le port 8080 de l'interface 
+locale.
+Découvrez comment atteindre cette adresse et faire une requête 
+vers ce port pour obtenir le mot de passe de votre secret.zip.
+
+ATTENTION : Les administrateurs d'EvilCorp ont supprimé "curl" et "wget"
+de ce serveur pour empêcher les requêtes internes !
+
+=====================================================================
+
+Indice : Vous allez devoir ruser et importer ce port local chez vous via un Tunnel SSH
+afin d'utiliser la commande "curl" depuis une autre machine !

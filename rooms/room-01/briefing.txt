@@ -1,0 +1,13 @@
+--- NIVEAU 1 : LEAK GIT ---
+
+Bravo Agent. Vous êtes dans la machine de développement d'Alice.
+Pour trouver le mot de passe de l'archive 'secret.zip' et accéder
+au prochain niveau, vous allez devoir fouiller dans les projets
+de développement.
+
+Alice a récemment travaillé sur un dépôt Git dans le dossier 'project'.
+Il semblerait qu'elle ait fait une erreur en commitant des informations
+sensibles avant de les supprimer.
+
+Cherchez dans l'historique de Git (git log, git diff, etc.) pour retrouver
+ce qu'elle a bien pu fuiter.

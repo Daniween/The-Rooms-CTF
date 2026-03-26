@@ -1,0 +1,18 @@
+--- NIVEAU 6 : REVERSE ENGINEERING (ANALYSE BIANIRE) ---
+
+Bienvenue dans l'ultime niveau Frank !
+Vous êtes face au portail d'authentification propriétaire d'EvilCorp.
+Seule l'application `auth_service` sait valider le mot de passe
+qui débloquera l'archive `secret.zip`. 
+
+Malheureusement, le code source n'est plus là, vous n'avez que
+le programme compilé... 
+
+Serez-vous capable d'analyser le comportement interne de
+ce programme pour extraire le mot de passe ? 
+(Indice : analysez les appels systèmes)
+
+=====================================================================
+
+Pour executer le programme : ./auth_service password
+

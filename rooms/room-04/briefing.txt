@@ -1,0 +1,8 @@
+--- NIVEAU 4 : METADONNÉES ---
+
+Vous êtes sur la machine de Dave, le graphiste d'EvilCorp.
+Dave a tendance à cacher ses mots de passe dans ses créations
+pour ne pas les oublier.
+
+Il a laissé une image 'company_logo.jpg' dans son dossier personnel.
+Examinez cette image en profondeur.

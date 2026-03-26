@@ -1,0 +1,131 @@
+services:
+
+  hub:
+    container_name: hub
+    build:
+      context: .
+      dockerfile: hub/Dockerfile
+      args:
+        USER: infiltrator
+        PASS: welcome
+    ports:
+      - "2222:22"
+    networks:
+      nw-cyber-hub:
+        ipv4_address: 172.30.0.2
+
+  room-01:
+    container_name: room-01
+    build:
+      context: .
+      dockerfile: rooms/room-01/Dockerfile
+      args:
+        USER: alice
+        PASS: WelcomeToEvilCorp
+        ZIP_PASS: GitL0v3r
+        FLAG: FLAG{g1t_c0mm1t_l34k_f0und}
+        NEXT_HOST: 172.30.0.12
+        NEXT_USER: bob
+        NEXT_PASS: Pc4PwIr3sh4rK
+        SECRET_PART: aHR0cHM6
+    networks:
+      nw-cyber-hub:
+        ipv4_address: 172.30.0.11
+
+  room-02:
+    container_name: room-02
+    build:
+      context: .
+      dockerfile: rooms/room-02/Dockerfile
+      args:
+        USER: bob
+        PASS: Pc4PwIr3sh4rK
+        ZIP_PASS: CleartextIsBad
+        FLAG: FLAG{pc4p_n3tw0rk_c4ptur3}
+        NEXT_HOST: 172.30.0.13
+        NEXT_USER: charlie
+        NEXT_PASS: Tu443LSs8
+        SECRET_PART: Ly93d3cueW91
+    networks:
+      nw-cyber-hub:
+        ipv4_address: 172.30.0.12
+
+  room-03:
+    container_name: room-03
+    build:
+      context: .
+      dockerfile: rooms/room-03/Dockerfile
+      args:
+        USER: charlie
+        PASS: Tu443LSs8
+        ZIP_PASS: LocalHostBypass
+        FLAG: FLAG{l0c4lf0rw4rd_m4st3r}
+        NEXT_HOST: 172.30.0.14
+        NEXT_USER: dave
+        NEXT_PASS: 3xIft00lS
+        SECRET_PART: dHViZS5jb20v
+    networks:
+      nw-cyber-hub:
+        ipv4_address: 172.30.0.13
+
+  room-04:
+    container_name: room-04
+    build:
+      context: .
+      dockerfile: rooms/room-04/Dockerfile
+      args:
+        USER: dave
+        PASS: 3xIft00lS
+        ZIP_PASS: HiddenInImage
+        FLAG: FLAG{m3t4d4t4_4ct1ng_up}
+        NEXT_HOST: 172.30.0.15
+        NEXT_USER: eve
+        NEXT_PASS: 3L3v4T3m3
+        SECRET_PART: d2F0Y2g/dj1B
+    networks:
+      nw-cyber-hub:
+        ipv4_address: 172.30.0.14
+
+  room-05:
+    container_name: room-05
+    build:
+      context: .
+      dockerfile: rooms/room-05/Dockerfile
+      args:
+        USER: eve
+        PASS: 3L3v4T3m3
+        ZIP_PASS: SuidRootMaster
+        FLAG: FLAG{su1d_r00t_3sc4l4t10n_d0n3}
+        NEXT_HOST: 172.30.0.16
+        NEXT_USER: frank
+        NEXT_PASS: FindM3IfYouC4n
+        SECRET_PART: cTVXWG1RU
+    networks:
+      nw-cyber-hub:
+        ipv4_address: 172.30.0.15
+
+  room-06:
+    container_name: room-06
+    build:
+      context: .
+      dockerfile: rooms/room-06/Dockerfile
+      args:
+        USER: frank
+        PASS: FindM3IfYouC4n
+        ZIP_PASS: R3v3rs3_M4st3r
+        FLAG: FLAG{r3v3rs3_3ng1n33r_g0d}
+        NEXT_HOST: ""
+        NEXT_USER: ""
+        NEXT_PASS: ""
+        SECRET_PART: W9vbw==
+    networks:
+      nw-cyber-hub:
+        ipv4_address: 172.30.0.16
+
+networks:
+  nw-cyber-hub:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.0.0/24
+          gateway: 172.30.0.1

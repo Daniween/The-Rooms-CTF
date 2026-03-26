@@ -1,0 +1,14 @@
+--- NIVEAU 5 : PRIVILÈGES SUID ---
+
+Félicitations, vous êtes proche de la fin !
+
+Vous êtes connectés en tant que 'eve', une administratrice junior sans 
+aucun droit sudo ni accès à la base de données de production.
+Cependant, un ancien script d'administration ou un exécutable
+système semble avoir été mal configuré avec le bit SUID. 
+
+=====================================================================
+
+Cherchez les exécutables SUID sur ce système (indice: find / -user root -perm -4000).
+Une fois trouvé, utilisez cet exécutable pour lire un fichier
+protégé situé dans '/root/flag_dir/password.txt'.
