@@ -61,7 +61,7 @@
 - Les administrateurs ayant supprimé `curl` et `wget`, il faut utiliser un tunnel SSH pour rediriger le port vers votre machine (ou le Hub).
   Se reconnecter avec l'option `-L` :
   `ssh -4 -L 8080:127.0.0.1:8080 charlie@172.30.0.13`
-- Depuis un autre terminal (ou après avoir mis la session en arrière-plan), faire la requête HTTP locale :
+  Depuis un autre terminal (ou après avoir mis la session en arrière-plan), faire la requête HTTP locale :
   `curl http://127.0.0.1:8080/`
 - Le mot de passe rendu par la page est `LocalHostBypass`.
 

@@ -10,14 +10,14 @@ ARG NEXT_USER=""
 ARG NEXT_PASS=""
 
 RUN apt-get update && apt-get install -y \
-    iputils-ping net-tools openssh-server sudo zip unzip python3 \
+    iputils-ping net-tools openssh-server zip unzip lighttpd \
     && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /var/run/sshd
 
 RUN useradd -m -s /bin/bash $USER && \
-    echo "$USER:$PASS" | chpasswd && \
-    usermod -aG sudo $USER
+    echo "$USER:$PASS" | chpasswd
+# Charlie won't have sudo to prevent bypassing restrictions
 
 # Create the secret zip file
 RUN mkdir -p /tmp/secret && \
@@ -38,6 +38,13 @@ COPY rooms/room-03/briefing.txt briefing.txt
 RUN mkdir -p /opt/internal_api && \
     echo "<h1>EvilCorp Internal API</h1><p>Access Token: $ZIP_PASS</p>" > /opt/internal_api/index.html && \
     chown -R root:root /opt/internal_api && chmod -R 755 /opt/internal_api
+
+# Minimal Lighttpd config for internal API only
+RUN printf 'server.document-root = "/opt/internal_api"\n\
+server.port = 8080\n\
+server.bind = "127.0.0.1"\n\
+index-file.names = ( "index.html" )\n\
+mimetype.assign = ( ".html" => "text/html" )' > /etc/lighttpd/lighttpd.conf
 
 # Copy init script
 COPY rooms/room-03/start.sh /start.sh
