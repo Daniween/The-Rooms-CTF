@@ -112,8 +112,8 @@ services:
       args:
         USER: frank
         PASS: FindM3IfYouC4n
-        ZIP_PASS: R3v3rs3_M4st3r
-        FLAG: FLAG{r3v3rs3_3ng1n33r_g0d}
+        ZIP_PASS: SQLmap_0wns_DB
+        FLAG: FLAG{sql_1nj3ct10n_m4st3r_w1th_sqlm4p}
         NEXT_HOST: ""
         NEXT_USER: ""
         NEXT_PASS: ""

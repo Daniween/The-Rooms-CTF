@@ -14,6 +14,7 @@ Dans ce scénario de simulation d'intrusion (Red Team), vous avez été engagé 
 - Comprendre et exploiter le port-forwarding SSH ou l'accès aux interfaces locales.
 - Extraire des métadonnées dissimulées (Steganographie basique / Exiftool).
 - Exploiter les vulnérabilités de configuration système Linux (Élévation de privilèges via SUID).
+- Identifier et exploiter une injection SQL à l'aide de SQLMap.
 
 ## Description des niveaux
 
@@ -24,7 +25,7 @@ Dans ce scénario de simulation d'intrusion (Red Team), vous avez été engagé 
 | **Niveau 3** | Découvrir et interagir avec un service caché n'écoutant que sur l'interface locale (`127.0.0.1`) | Reconnaissance réseau interne, SSH Tunneling |
 | **Niveau 4** | Analyser les métadonnées d'une image pour y déceler des informations dissimulées | Analyse de métadonnées, Exiftool |
 | **Niveau 5** | Élévation de privilèges (Privesc) en exploitant un exécutable possédant le bit SUID | Système Linux, Privesc, GTFOBins |
-| **Niveau 6** | Rétro-ingénierie d'un binaire C protégé (Analyse dynamique et appels systèmes) | Reverse Engineering, ltrace, strings |
+| **Niveau 6** | Identifier et exploiter une injection SQL dans un portail web interne pour extraire la base de données | Injection SQL, SQLMap, SQLite |
 
 ## Démarrage et accès au Hub
 

@@ -1,18 +1,21 @@
---- NIVEAU 6 : REVERSE ENGINEERING (ANALYSE BIANIRE) ---
+--- NIVEAU 6 : INJECTION SQL (SQLMap) ---
 
-Bienvenue dans l'ultime niveau Frank !
-Vous êtes face au portail d'authentification propriétaire d'EvilCorp.
-Seule l'application `auth_service` sait valider le mot de passe
-qui débloquera l'archive `secret.zip`. 
+Bienvenue dans l'ultime niveau, Frank !
 
-Malheureusement, le code source n'est plus là, vous n'avez que
-le programme compilé... 
+Les administrateurs d'EvilCorp ont déployé en urgence un portail
+RH interne pour gérer leurs employés. Par souci de "rapidité",
+leur développeur a... disons... fait quelques raccourcis.
 
-Serez-vous capable d'analyser le comportement interne de
-ce programme pour extraire le mot de passe ? 
-(Indice : analysez les appels systèmes)
+Un service web tourne quelque part sur cette machine.
+Il ne répond qu'en local — mais il contient dans sa base de données
+les secrets qui déverrouilleront l'archive `secret.zip`.
+
+À vous de le trouver, d'analyser son comportement,
+et d'en extraire ce qu'il ne devrait pas vous montrer.
+
+(Indice : commencez par lister les ports en écoute)
 
 =====================================================================
 
-Pour executer le programme : ./auth_service password
+Outils disponibles : curl, sqlmap, ss, netstat
 
