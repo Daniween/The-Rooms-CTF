@@ -31,6 +31,9 @@ RUN mkdir -p /tmp/secret && \
     chown $USER:$USER /home/$USER/secret.zip && \
     rm -rf /tmp/secret
 
+COPY rooms/room-04/motd.txt /etc/motd
+RUN chmod 644 /etc/motd && echo "PrintMotd yes" >> /etc/ssh/sshd_config
+
 WORKDIR /home/$USER
 COPY rooms/room-04/briefing.txt briefing.txt
 

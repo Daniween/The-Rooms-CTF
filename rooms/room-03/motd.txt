@@ -1,0 +1,14 @@
+
+╔══════════════════════════════════════════════════════════════════╗
+║            E V I L C O R P  —  A C C È S  I N T E R N E         ║
+╠══════════════════════════════════════════════════════════════════╣
+║                                                                  ║
+║   [✓] Connexion établie avec succès                              ║
+║                                                                  ║
+║   Utilisateur  :  charlie                                        ║
+║   Machine      :  api-gateway.evilcorp.local                     ║
+║   Niveau       :  3 / 6  —  Service Caché / SSH Tunneling        ║
+║                                                                  ║
+║   Lisez briefing.txt pour commencer votre mission.               ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝

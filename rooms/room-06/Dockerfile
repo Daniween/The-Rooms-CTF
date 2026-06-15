@@ -29,30 +29,16 @@ RUN mkdir -p /tmp/secret && \
     rm -rf /tmp/secret
 
 # Build the SQLite database (FLAG and ZIP_PASS baked in at build time)
+# SQL must stay on one line — multi-line strings in RUN are parsed as Dockerfile instructions
 RUN mkdir -p /var/db && \
-    sqlite3 /var/db/ctf.db "
-CREATE TABLE employees (
-    id INTEGER PRIMARY KEY,
-    name TEXT NOT NULL,
-    department TEXT NOT NULL,
-    salary INTEGER
-);
-INSERT INTO employees VALUES (1,'Alice Martin','Ingenierie',85000);
-INSERT INTO employees VALUES (2,'Bob Dupont','Marketing',65000);
-INSERT INTO employees VALUES (3,'Carol Leroy','Finance',90000);
-INSERT INTO employees VALUES (4,'Dave Bernard','Securite IT',95000);
-
-CREATE TABLE vault (
-    id INTEGER PRIMARY KEY,
-    secret_name TEXT NOT NULL,
-    secret_value TEXT NOT NULL
-);
-INSERT INTO vault VALUES (1,'FLAG','${FLAG}');
-INSERT INTO vault VALUES (2,'ZIP_PASS','${ZIP_PASS}');
-" && chmod 644 /var/db/ctf.db
+    sqlite3 /var/db/ctf.db "CREATE TABLE employees (id INTEGER PRIMARY KEY, name TEXT NOT NULL, department TEXT NOT NULL, salary INTEGER); INSERT INTO employees VALUES (1,'Alice Martin','Ingenierie',85000); INSERT INTO employees VALUES (2,'Bob Dupont','Marketing',65000); INSERT INTO employees VALUES (3,'Carol Leroy','Finance',90000); INSERT INTO employees VALUES (4,'Dave Bernard','Securite IT',95000); CREATE TABLE vault (id INTEGER PRIMARY KEY, secret_name TEXT NOT NULL, secret_value TEXT NOT NULL); INSERT INTO vault VALUES (1,'FLAG','${FLAG}'); INSERT INTO vault VALUES (2,'ZIP_PASS','${ZIP_PASS}');" && \
+    chmod 644 /var/db/ctf.db
 
 # Deploy the vulnerable web app
 COPY rooms/room-06/app.py /opt/webapp/app.py
+
+COPY rooms/room-06/motd.txt /etc/motd
+RUN chmod 644 /etc/motd && echo "PrintMotd yes" >> /etc/ssh/sshd_config
 
 WORKDIR /home/${USER}
 COPY rooms/room-06/briefing.txt briefing.txt

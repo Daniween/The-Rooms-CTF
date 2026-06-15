@@ -1,0 +1,14 @@
+
+╔══════════════════════════════════════════════════════════════════╗
+║            E V I L C O R P  —  A C C È S  I N T E R N E         ║
+╠══════════════════════════════════════════════════════════════════╣
+║                                                                  ║
+║   [✓] Connexion établie avec succès                              ║
+║                                                                  ║
+║   Utilisateur  :  bob                                            ║
+║   Machine      :  netsec-01.evilcorp.local                       ║
+║   Niveau       :  2 / 6  —  Analyse Réseau (PCAP)               ║
+║                                                                  ║
+║   Lisez briefing.txt pour commencer votre mission.               ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝

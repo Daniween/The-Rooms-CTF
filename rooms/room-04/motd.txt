@@ -1,0 +1,14 @@
+
+╔══════════════════════════════════════════════════════════════════╗
+║            E V I L C O R P  —  A C C È S  I N T E R N E         ║
+╠══════════════════════════════════════════════════════════════════╣
+║                                                                  ║
+║   [✓] Connexion établie avec succès                              ║
+║                                                                  ║
+║   Utilisateur  :  dave                                           ║
+║   Machine      :  media-srv.evilcorp.local                       ║
+║   Niveau       :  4 / 6  —  Analyse de Métadonnées              ║
+║                                                                  ║
+║   Lisez briefing.txt pour commencer votre mission.               ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝

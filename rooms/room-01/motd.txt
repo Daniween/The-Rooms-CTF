@@ -1,0 +1,14 @@
+
+╔══════════════════════════════════════════════════════════════════╗
+║            E V I L C O R P  —  A C C È S  I N T E R N E         ║
+╠══════════════════════════════════════════════════════════════════╣
+║                                                                  ║
+║   [✓] Connexion établie avec succès                              ║
+║                                                                  ║
+║   Utilisateur  :  alice                                          ║
+║   Machine      :  workstation-dev.evilcorp.local                 ║
+║   Niveau       :  1 / 6  —  Git Forensics                        ║
+║                                                                  ║
+║   Lisez briefing.txt pour commencer votre mission.               ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝
