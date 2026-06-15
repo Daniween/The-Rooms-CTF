@@ -1,13 +1,13 @@
 
 ╔══════════════════════════════════════════════════════════════════╗
-║            E V I L C O R P  —  A C C È S  I N T E R N E         ║
+║            E V I L C O R P  —  A C C È S  I N T E R N E          ║
 ╠══════════════════════════════════════════════════════════════════╣
 ║                                                                  ║
 ║   [✓] Connexion établie avec succès                              ║
 ║                                                                  ║
 ║   Utilisateur  :  frank                                          ║
 ║   Machine      :  db-backend.evilcorp.local                      ║
-║   Niveau       :  6 / 6  —  Injection SQL (SQLMap)              ║
+║   Niveau       :  6 / 6  —  Injection SQL (SQLMap)               ║
 ║                                                                  ║
 ║   Lisez briefing.txt pour commencer votre mission.               ║
 ║                                                                  ║

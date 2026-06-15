@@ -1,13 +1,13 @@
 
 ╔══════════════════════════════════════════════════════════════════╗
-║            E V I L C O R P  —  A C C È S  I N T E R N E         ║
+║            E V I L C O R P  —  A C C È S  I N T E R N E          ║
 ╠══════════════════════════════════════════════════════════════════╣
 ║                                                                  ║
 ║   [✓] Connexion établie avec succès                              ║
 ║                                                                  ║
 ║   Utilisateur  :  eve                                            ║
 ║   Machine      :  infra-01.evilcorp.local                        ║
-║   Niveau       :  5 / 6  —  Élévation de Privilèges (SUID)      ║
+║   Niveau       :  5 / 6  —  Élévation de Privilèges (SUID)       ║
 ║                                                                  ║
 ║   Lisez briefing.txt pour commencer votre mission.               ║
 ║                                                                  ║
